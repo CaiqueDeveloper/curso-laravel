@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProductsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -153,6 +154,9 @@ Route::get('/', function () {
             });
     });
 
+    // INICIANDO OS ESTUDO SOBRE CONTROLLER
+    
+    Route::get('products', [ProductsController::class, 'index'])->name('products.index');
 
    /** Rota Auxuliar para fazer o teste */
    Route::get('/login', function(){
