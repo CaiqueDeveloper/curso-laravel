@@ -161,6 +161,13 @@ Route::get('/', function () {
     // PASSANDO PARAMENTROS PARA O CONTROLADOR
     Route::get('products/{id}', [ProductsController::class, 'show'])->name('products.show');
 
+    //ESTRUTURA DE ROTAS DE UM CRUD BASICO
+    Route::get('products/create', [ProductsController::class, 'create'])->name('products.create');
+    Route::get('products/{id}/edit', [ProductsController::class, 'edit'])->name('prodcuts.edit');
+    Route::put('products/{id}', [ProductsController::class, 'update'])->name('producuts.update');
+    Route::post('products', [ProductsController::class, 'store'])->name('products.store');
+    Route::get('products/{id}/destroy', [ProductsController::class, 'destroy'])->name('products.destroy');
+
    /** Rota Auxuliar para fazer o teste */
    Route::get('/login', function(){
        return 'Login';
