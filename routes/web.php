@@ -158,6 +158,9 @@ Route::get('/', function () {
     
     Route::get('products', [ProductsController::class, 'index'])->name('products.index');
 
+    // PASSANDO PARAMENTROS PARA O CONTROLADOR
+    Route::get('products/{id}', [ProductsController::class, 'show'])->name('products.show');
+
    /** Rota Auxuliar para fazer o teste */
    Route::get('/login', function(){
        return 'Login';

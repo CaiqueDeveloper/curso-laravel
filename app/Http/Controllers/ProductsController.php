@@ -10,4 +10,9 @@ class ProductsController extends Controller
     {
         return " Listagem de Produtos !";
     }
+
+    public function show($id)
+    {
+        return "O ID do produto é: {$id}";
+    }
 }
