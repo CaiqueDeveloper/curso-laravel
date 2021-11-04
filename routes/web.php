@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Controllers\ProductsController;
-use Illuminate\Support\Facades\Route;
 
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\UserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -167,6 +168,12 @@ Route::get('/', function () {
     Route::put('products/{id}', [ProductsController::class, 'update'])->name('producuts.update');
     Route::post('products', [ProductsController::class, 'store'])->name('products.store');
     Route::get('products/{id}/destroy', [ProductsController::class, 'destroy'])->name('products.destroy');
+
+
+    //TRBALHAMDO COM RESOURCE EM LARAVE
+
+    Route::resource('/user', UserController::class);
+    Route::resource('/photo', PhotoContoller::class);
 
    /** Rota Auxuliar para fazer o teste */
    Route::get('/login', function(){
